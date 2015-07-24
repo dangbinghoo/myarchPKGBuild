@@ -1,0 +1,20 @@
+# Maintainer: sbillaudelle <stein@cream-project.org>
+
+pkgname=deepin-music-player-plugin-baidu
+pkgver=1.0
+pkgrel=1
+pkgdesc="Deepin music player baidu plugin."
+arch=('i686' 'x86_64')
+license=('LGPL')
+depends=('pyjavascriptcore-python2-git')
+makedepends=('git')
+
+source=('dmusic-plugin-baidumusic::git://github.com/sumary/dmusic-plugin-baidumusic.git')
+md5sums=('SKIP')
+
+package()
+{
+    cd $srcdir/dmusic-plugin-baidumusic
+    mkdir -pv $pkgdir/usr/share/deepin-music/plugins
+    cp -r baidumusic $pkgdir/usr/share/deepin-music/plugins || return
+}

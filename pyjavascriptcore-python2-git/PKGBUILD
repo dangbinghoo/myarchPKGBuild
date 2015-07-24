@@ -1,0 +1,22 @@
+# Maintainer: sbillaudelle <stein@cream-project.org>
+
+pkgname=pyjavascriptcore-python2-git
+pkgver=62
+pkgrel=2
+pkgdesc="Use Python to tap into the whole power of WebKit."
+arch=('i686' 'x86_64')
+url="https://launchpad.net/pyjavascriptcore"
+license=('LGPL')
+depends=('cython2')
+makedepends=('git')
+provide=('pyjavascriptcore-python2')
+
+source=('pyjavascriptcore::git://github.com/sumary/pyjavascriptcore.git')
+md5sums=('SKIP')
+
+package()
+{
+    cd $srcdir/pyjavascriptcore
+
+    python2 setup.py install --prefix=/usr --root="$pkgdir" || return
+}
