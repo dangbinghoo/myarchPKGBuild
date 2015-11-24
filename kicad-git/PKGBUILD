@@ -3,7 +3,7 @@
 
 pkgname=kicad-git
 _gitname=kicad
-pkgver=7280.53b8a8c
+pkgver=7902.b6bb87a
 pkgrel=1
 pkgdesc="Electronic schematic and printed circuit board (PCB) design tools"
 arch=('i686' 'x86_64')
